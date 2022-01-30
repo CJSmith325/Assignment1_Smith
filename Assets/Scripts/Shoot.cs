@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Shoot : MonoBehaviour
@@ -9,6 +10,7 @@ public class Shoot : MonoBehaviour
 
     public GameObject bullet;
     public GameObject player;
+    public GameObject respawnText;
 
     public float bulletSpeed;
 
@@ -60,14 +62,5 @@ public class Shoot : MonoBehaviour
         }
        
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Enemy")
-        {
-            Destroy(this.gameObject);
-            Destroy(other.gameObject);
-            
-        }
-    }
-    
+  
 }
