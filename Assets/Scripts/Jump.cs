@@ -26,8 +26,9 @@ public class Jump : MonoBehaviour
         GameObject arm = GameObject.Find("arm");
         GameObject gun = GameObject.Find("gun");
         GameObject player = GameObject.Find("Player");
+        GameObject gunTip = GameObject.Find("gunTip");
+        GameObject gunPivot = GameObject.Find("gunPivot");
 
-        
 
         isGrounded = Physics2D.Raycast(transform.position, -transform.up, groundRayLength, layers);
         Debug.DrawRay(transform.position, -transform.up * groundRayLength, Color.red);
@@ -46,14 +47,19 @@ public class Jump : MonoBehaviour
         if (reggiebody.velocity.x > 0)
         {
             arm.transform.rotation = Quaternion.Euler(0, 180, 0);
-            gun.transform.rotation = Quaternion.Euler(0, 180, 0);
+            //gun.transform.rotation = Quaternion.Euler(0, 180, 0);
             player.transform.rotation = Quaternion.Euler(0, 180, 0);
+            //gunTip.transform.rotation = Quaternion.Euler(0, 180, 0);
+            //gunPivot.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
         if (reggiebody.velocity.x < 0)
         {
             arm.transform.rotation = Quaternion.Euler(0, 0, 0);
-            gun.transform.rotation = Quaternion.Euler(0, 0, 0);
-           //  player.transform.rotation = Quaternion.Euler(0, 0, 0);
+            //gun.transform.rotation = Quaternion.Euler(0, 0, 0);
+            player.transform.rotation = Quaternion.Euler(0, 0, 0);
+            //gunTip.transform.rotation = Quaternion.Euler(0, 0, 0);
+            //gunPivot.transform.rotation = Quaternion.Euler(0, 0, 0);
+            
         }
 
        
